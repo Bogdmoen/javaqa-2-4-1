@@ -4,7 +4,7 @@ public class StatsService {
 
     public long calculateSalesSum(long[] sales) {
         long sum = 0;
-        for(long sale : sales) {
+        for (long sale : sales) {
 
             sum += sale;
         }
@@ -27,7 +27,7 @@ public class StatsService {
         long currentMax = findMaxAmount(sales);
         long monthWithMax = 0;
         long monthCount = 0;
-        for (long sale: sales) {
+        for (long sale : sales) {
 
             monthCount++;
             if (sale == currentMax) {
@@ -44,7 +44,7 @@ public class StatsService {
         long currentMin = findMinAmount(sales);
         long monthWithMin = 0;
         long monthCount = 0;
-        for (long sale: sales) {
+        for (long sale : sales) {
 
             monthCount++;
             if (sale == currentMin) {
@@ -55,7 +55,6 @@ public class StatsService {
         return monthWithMin;
 
     }
-
 
 
     public long findMaxAmount(long[] sales) {
@@ -83,5 +82,32 @@ public class StatsService {
     }
 
 
+    public long findMonthLowerThanAvg(long[] sales) {
+
+        long avgSales = calculateAvgAmount(sales);
+        long monthCount = 0;
+
+        for (long sale : sales) {
+            if (sale < avgSales) {
+                monthCount++;
+            }
+
+        }
+        return monthCount;
+    }
+
+    public long findMonthHigherThanAvg(long[] sales) {
+        long avgSales = calculateAvgAmount(sales);
+        long monthCount = 0;
+
+        for (long sale : sales) {
+            if (sale < avgSales) {
+                monthCount++;
+            }
+
+        }
+        return monthCount;
+
+    }
 }
 

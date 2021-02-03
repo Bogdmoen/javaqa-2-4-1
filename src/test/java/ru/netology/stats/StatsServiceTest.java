@@ -14,7 +14,7 @@ class StatsServiceTest {
         long expected = 180;
         long actual = service.calculateSalesSum(sales);
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -23,7 +23,7 @@ class StatsServiceTest {
         long expected = 15;
         long actual = service.calculateAvgAmount(sales);
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -32,17 +32,37 @@ class StatsServiceTest {
         long expected = 8;
         long actual = service.findMaxMonth(sales);
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
 
     }
 
     @Test
     void shouldFindMinMonth() {
-        
+
         long expected = 9;
         long actual = service.findMinMonth(sales);
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    void shouldFinMonthsLowerThanAvg() {
+
+        long expected = 5;
+        long actual = service.findMonthLowerThanAvg(sales);
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    void shouldFinMonthsHigherThanAvg() {
+
+        long expected = 5;
+        long actual = service.findMonthHigherThanAvg(sales);
+
+        assertEquals(expected, actual);
 
     }
 }
