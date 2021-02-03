@@ -21,5 +21,67 @@ public class StatsService {
         return AvgAmount;
 
     }
+
+    public long findMaxMonth(long[] sales) {
+
+        long currentMax = findMaxAmount(sales);
+        long monthWithMax = 0;
+        long monthCount = 0;
+        for (long sale: sales) {
+
+            monthCount++;
+            if (sale == currentMax) {
+                monthWithMax = monthCount;
+            }
+
+        }
+        return monthWithMax;
+
+    }
+
+    public long findMinMonth(long[] sales) {
+
+        long currentMin = findMinAmount(sales);
+        long monthWithMin = 0;
+        long monthCount = 0;
+        for (long sale: sales) {
+
+            monthCount++;
+            if (sale == currentMin) {
+                monthWithMin = monthCount;
+            }
+
+        }
+        return monthWithMin;
+
+    }
+
+
+
+    public long findMaxAmount(long[] sales) {
+        long currentMax = sales[0];
+
+        for (long sale : sales) {
+            if (currentMax < sale) {
+
+                currentMax = sale;
+            }
+        }
+        return currentMax;
+    }
+
+    public long findMinAmount(long[] sales) {
+        long currentMin = sales[0];
+
+        for (long sale : sales) {
+            if (currentMin > sale) {
+
+                currentMin = sale;
+            }
+        }
+        return currentMin;
+    }
+
+
 }
 
